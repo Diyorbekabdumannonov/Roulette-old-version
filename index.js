@@ -74,17 +74,17 @@ function drawRouletteWheel() {
       ctx.shadowColor = "rgb(220,220,220)";
       ctx.fillStyle = "black";
       ctx.translate(
-        250 + Math.cos(angle + arc / 2) * textRadius,
+        255 + Math.cos(angle + arc / 2) * textRadius,
         250 + Math.sin(angle + arc / 2) * textRadius
       );
-      ctx.rotate(angle + arc / 2 + Math.PI / 2);
+      ctx.rotate(angle + arc / 2 - 0.1);
       var text = options[i];
 
-      ctx.font = "16px Brown";
+      ctx.font = "20px sans-serif";
       ctx.lineWidth = 1;
       ctx.strokeStyle = getFontColor(i);
       ctx.fillStyle = getFontColor(i);
-      ctx.strokeText(text, -ctx.measureText(text).width / 2, 0);
+      ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
 
       ctx.restore();
     }
